@@ -54,6 +54,8 @@ function App() {
                         fullName={item.fullName}
                         location={item.states}
                         description={item.description}
+                        url={item.url}
+                        weatherInfo={item.weatherInfo}
                     />
                 )
             })}

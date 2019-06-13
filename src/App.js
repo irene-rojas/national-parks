@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
-// import Park from "./components/Park/Park";
+import Park from "./components/Park/Park";
 import Map from "./components/Map/Map.js";
 
 function App() {
@@ -9,68 +9,51 @@ function App() {
     const [state, setState] = useState("");
     const [parks, setParks] = useState([]);
 
-    const displayParks = (state) => {
+    const displayParks = () => {
         axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}`)
         .then(res => {
             setParks(res.data.data);
             console.log(res.data.data);
-            console.log(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}`);
         });
     }
 
+    // need loading animation since API is slow
 
   return (
     <div className="App">
 
+        <div>
+            Click a state to see its national parks and trails
+        </div>
+
         <div className="mapDiv">
             <Map 
                 value={state}
-                onClick={event => {
+                onClick={displayParks}
+                onMouseUp={event => {
+                    event.preventDefault();
                     setState(event.target.id);
-                    console.log(event.target.id);
-                    displayParks();
-                    }}
+                    console.log(`Selected state: ${event.target.id}`);
+                }}
             />
+            {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
         </div>
 
-
-        {/* <div className="parkSearchDiv">
-            <form
-                className="parkForm"
-                onSubmit={event => {
-                    event.preventDefault();
-                    getPark();}}>
-                    <input 
-                        value={query}
-                        onChange={event => {
-                            event.preventDefault();
-                            setQuery(event.target.value);
-                            }}
-                    />
-                <button>Search</button>
-            </form>
-
-            {park.length === 0 && parkError === true &&
-                <div>
-                    No results. Please check spelling.
-                </div>
-            }
-        </div> */}
-
-        {/* <div>
-            {park.map(item => {
+        <div>
+            <div>You selected {state}.</div>
+            {parks.map(park => {
                 return (
                     <Park 
-                        key={item.id}
-                        fullName={item.fullName}
-                        location={item.states}
-                        description={item.description}
-                        url={item.url}
-                        weatherInfo={item.weatherInfo}
+                        key={park.id}
+                        fullName={park.fullName}
+                        location={park.states}
+                        description={park.description}
+                        url={park.url}
+                        weatherInfo={park.weatherInfo}
                     />
                 )
             })}
-        </div> */}
+        </div>
     </div>
   );
 }

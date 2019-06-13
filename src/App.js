@@ -6,27 +6,39 @@ import Map from "./components/Map/Map.js";
 
 function App() {
 
-    const [query, setQuery] = useState("");
-    const [park, setPark] = useState([]);
-    const [parkError, setParkError] = useState(false);
+    // const [query, setQuery] = useState("");
+    // const [park, setPark] = useState([]);
+    // const [parkError, setParkError] = useState(false);
+    const [state, setState] = useState("");
 
-    const getPark = () => {
-        axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&q=${query.replace(/ /g,"%20")}`)
+    // const getPark = () => {
+    //     axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&q=${query.replace(/ /g,"%20")}`)
+    //     .then(res => {
+    //         setPark(res.data.data.slice(0,20));
+    //         console.log(res.data.data.slice(0,20));
+    //         if (!park.length > 0) {
+    //             setParkError(true);
+    //         }
+    //     })
+    // };
+
+    const getState = () => {
+        axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=VA`)
         .then(res => {
-            setPark(res.data.data.slice(0,20));
-            console.log(res.data.data.slice(0,20));
-            if (!park.length > 0) {
-                setParkError(true);
-            }
+            setState(res.data.data);
+            console.log(res.data.data);
         })
-    };
+    }
 
   return (
     <div className="App">
 
+        <button onClick={() => getState()}>Search</button>
+
         <div className="mapDiv">
             <Map />
         </div>
+
 
         {/* <div className="parkSearchDiv">
             <form

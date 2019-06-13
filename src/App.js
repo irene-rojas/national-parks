@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import Park from "./components/Park/Park";
-import Map from "./components/Map/Map";
+import Map from "./components/Map/Map.js";
 
 function App() {
 

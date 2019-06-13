@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import Park from "./Park/Park";
+import Park from "./components/Park/Park";
 
 function App() {
 

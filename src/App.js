@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import Park from "./components/Park/Park";
+// import Park from "./components/Park/Park";
 import Map from "./components/Map/Map.js";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <Map />
         </div>
 
-        <div className="parkSearchDiv">
+        {/* <div className="parkSearchDiv">
             <form
                 className="parkForm"
                 onSubmit={event => {
@@ -49,9 +49,9 @@ function App() {
                     No results. Please check spelling.
                 </div>
             }
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
             {park.map(item => {
                 return (
                     <Park 
@@ -64,7 +64,7 @@ function App() {
                     />
                 )
             })}
-        </div>
+        </div> */}
     </div>
   );
 }

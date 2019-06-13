@@ -1,0 +1,9 @@
+.state {
+    fill: white;
+    opacity: 0.70;
+}
+
+path:hover {
+    fill: black;
+    opacity: 0.75;
+}

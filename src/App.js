@@ -10,33 +10,33 @@ function App() {
     // const [park, setPark] = useState([]);
     // const [parkError, setParkError] = useState(false);
     const [state, setState] = useState("");
+    const [parks, setParks] = useState([]);
 
-    // const getPark = () => {
-    //     axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&q=${query.replace(/ /g,"%20")}`)
-    //     .then(res => {
-    //         setPark(res.data.data.slice(0,20));
-    //         console.log(res.data.data.slice(0,20));
-    //         if (!park.length > 0) {
-    //             setParkError(true);
-    //         }
-    //     })
-    // };
+    const displayParks = () => {
 
-    const getState = () => {
-        axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=VA`)
+        axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}`)
         .then(res => {
-            setState(res.data.data);
+            setParks(res.data.data);
             console.log(res.data.data);
-        })
+            console.log(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}`);
+        });
+        
     }
+
 
   return (
     <div className="App">
 
-        <button onClick={() => getState()}>Search</button>
-
         <div className="mapDiv">
-            <Map />
+            <Map 
+                value={state}
+                onClick={event => {
+                    event.preventDefault();
+                    setState(event.target.id);
+                    displayParks(state);
+                }}
+                
+            />
         </div>
 
 

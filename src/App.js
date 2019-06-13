@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import Park from "./components/Park/Park";
+import Map from "./components/Map/Map";
 
 function App() {
 
@@ -22,6 +23,10 @@ function App() {
 
   return (
     <div className="App">
+
+        <div className="mapDiv">
+            <Map />
+        </div>
 
         <div className="parkSearchDiv">
             <form

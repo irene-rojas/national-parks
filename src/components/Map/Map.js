@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Map = () => {
-
-    
-
-
-
-
-
+const Map = (props) => {
 
     return (
-        <div></div>
+        <div className="svgDiv" onClick={props.onClick}>
+
+        </div>
     )
-}
+
+
+
+};
+
+export default Map;

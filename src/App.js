@@ -26,7 +26,8 @@ function App() {
             Click a state to see its national parks and trails
         </div>
 
-        <div className="mapDiv">
+        <div className="mapDiv"> 
+
             <Map 
                 value={state}
                 onClick={displayParks}
@@ -37,6 +38,7 @@ function App() {
                 }}
             />
             {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
+
         </div>
 
         <div>

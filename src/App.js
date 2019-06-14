@@ -13,7 +13,7 @@ function App() {
 
     const displayParks = () => {
         setLoading(true);
-        axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}`)
+        axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}&fields=images`)
         .then(res => {
             setParks(res.data.data);
             console.log(res.data.data);
@@ -59,6 +59,8 @@ function App() {
                             description={park.description}
                             url={park.url}
                             weatherInfo={park.weatherInfo}
+                            img={park.images.url}
+                            imgAlt={park.images[0].title}
                         />
                     )
                 })}

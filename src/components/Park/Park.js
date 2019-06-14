@@ -4,6 +4,8 @@ import "./Park.css";
 const Park = (props) => {
     return (
         <div className="parkResult">
+            <img className="parkImages" src={props.img} alt={props.imgAlt}/>
+            <br/>
             Park Name: {props.fullName}
             <br/>
             Location: {props.location}

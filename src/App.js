@@ -3,21 +3,24 @@ import './App.css';
 import axios from 'axios';
 import Park from "./components/Park/Park";
 import Map from "./components/Map/Map.js";
+import spinning from "./spinning.gif";
 
 function App() {
 
     const [state, setState] = useState("");
     const [parks, setParks] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const displayParks = () => {
+        setLoading(true);
         axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}`)
         .then(res => {
             setParks(res.data.data);
             console.log(res.data.data);
-        });
+        }).then(() => {
+            setLoading(false);
+        })
     }
-
-    // need loading animation since API is slow
 
   return (
     <div className="App">
@@ -41,20 +44,24 @@ function App() {
 
         </div>
 
-        <div>
+        <div className="parkResultsDiv">
             <div>You selected {state}.</div>
-            {parks.map(park => {
-                return (
-                    <Park 
-                        key={park.id}
-                        fullName={park.fullName}
-                        location={park.states}
-                        description={park.description}
-                        url={park.url}
-                        weatherInfo={park.weatherInfo}
-                    />
-                )
-            })}
+
+            {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
+
+            {loading === false && 
+                parks.map(park => {
+                    return (
+                        <Park 
+                            key={park.id}
+                            fullName={park.fullName}
+                            location={park.states}
+                            description={park.description}
+                            url={park.url}
+                            weatherInfo={park.weatherInfo}
+                        />
+                    )
+                })}
         </div>
     </div>
   );

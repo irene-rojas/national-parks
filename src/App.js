@@ -20,35 +20,15 @@ function App() {
 
     // need loading animation since API is slow
 
-    const circleRef = React.createRef();
-
   return (
     <div className="App">
-
-    <svg viewBox="0 0 100 100">
-        <circle ref={circleRef} cx={50} cy={50} r={10} fill="steelblue" />
-        <Tooltip triggerRef={circleRef}>
-          <rect
-            x={2}
-            y={2}
-            width={10}
-            height={5}
-            rx={0.5}
-            ry={0.5}
-            fill="black"
-          />
-          <text x={5} y={5} fontSize={2} fill="white">
-            Yay!
-          </text>
-        </Tooltip>
-      </svg>
-
 
         <div>
             Click a state to see its national parks and trails
         </div>
 
-        <div className="mapDiv">
+        <div className="mapDiv"> 
+
             <Map 
                 value={state}
                 onClick={displayParks}
@@ -59,6 +39,7 @@ function App() {
                 }}
             />
             {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
+
         </div>
 
         <div>

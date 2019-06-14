@@ -45,7 +45,7 @@ function App() {
         </div>
 
         <div className="parkResultsDiv">
-            <div>You selected {state}.</div>
+            {state && <div>You selected {state}.</div>}
 
             {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
 

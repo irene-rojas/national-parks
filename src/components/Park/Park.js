@@ -6,9 +6,7 @@ const Park = (props) => {
         <div className="parkResult">
 
             {/* conditional rending here? if photo undefined, still show */}
-            {props.img !== undefined && 
-                <img className="parkImages" src={props.img} alt={props.imgAlt}/>
-            }
+            <img className="parkImages" src={props.img} alt={props.imgAlt}/>
 
             <br/>
             Park Name: {props.fullName}

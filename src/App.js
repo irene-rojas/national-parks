@@ -59,7 +59,7 @@ function App() {
                             description={park.description}
                             url={park.url}
                             weatherInfo={park.weatherInfo}
-                            img={park.images.url}
+                            img={park.images[0].url}
                             imgAlt={park.images[0].title}
                         />
                     )

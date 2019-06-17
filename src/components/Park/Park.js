@@ -4,7 +4,12 @@ import "./Park.css";
 const Park = (props) => {
     return (
         <div className="parkResult">
-            <img className="parkImages" src={props.img} alt={props.imgAlt}/>
+
+            {/* conditional rending here? if photo undefined, still show */}
+            {props.img !== undefined && 
+                <img className="parkImages" src={props.img} alt={props.imgAlt}/>
+            }
+
             <br/>
             Park Name: {props.fullName}
             <br/>

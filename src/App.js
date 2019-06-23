@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import Park from "./components/Park/Park";
-import Map from "./components/Map/Map.js";
+import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
 
         <div className="mapDiv"> 
 
-            <Map 
+            <SVGMap 
                 value={state}
                 onClick={displayParks}
                 onMouseUp={event => {

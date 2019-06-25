@@ -75,8 +75,7 @@ function App() {
                             description={park.description}
                             url={park.url}
                             weatherInfo={park.weatherInfo}
-                            src={park.images[0].url}
-                            imgAlt={park.images[0].title}
+                            images={park.images}
                         />
                     )
                 })}

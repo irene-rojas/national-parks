@@ -49,7 +49,7 @@ function App() {
 
             {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
 
-            {loading === false && 
+            {/* {loading === false && 
                 parks.map(park => {
                     return (
                         <Park 
@@ -59,8 +59,23 @@ function App() {
                             description={park.description}
                             url={park.url}
                             weatherInfo={park.weatherInfo}
-                            img={park.images[0].url}
+                            src={park.images[0].url}
                             imgAlt={park.images[0].title}
+                        />
+                    )
+                })} */}
+
+                {loading === false && 
+                parks.map(park => {
+                    return (
+                        <Park 
+                            key={park.id}
+                            fullName={park.fullName}
+                            location={park.states}
+                            description={park.description}
+                            url={park.url}
+                            weatherInfo={park.weatherInfo}
+                            images={park.images}
                         />
                     )
                 })}

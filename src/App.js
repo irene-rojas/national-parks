@@ -27,12 +27,18 @@ function App() {
     <div className="App">
 
         <div className="header">
-            <h1>Take A Hike!</h1>
-            <h3>Click a state to see its national parks and trails</h3>
+            <h1 id="takeHike">Take A Hike!</h1>
+            <h3 id="instruct">Click a state to see its national parks and trails</h3>
             <br/>
-            Powered by <a href="https://www.nps.gov/index.htm">
-                <img id="npsLogo" src={nps_logo} alt="logo"/>
-            </a>
+            <div className="poweredBy">
+                Powered by
+            </div>
+
+            <div className="logoDiv">
+                <a href="https://www.nps.gov/index.htm">
+                    <img id="npsLogo" src={nps_logo} alt="logo"/>
+                </a>
+            </div>
         </div>
 
         <div className="mapDiv"> 

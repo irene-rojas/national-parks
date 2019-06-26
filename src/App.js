@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
 
-        <div>
+        <div className="header">
             Click a state to see its national parks and trails
         </div>
 
@@ -45,14 +45,18 @@ function App() {
         </div>
 
         <div className="parkResultsDiv">
-            {state && <div>You selected {state}.</div>}
 
-            {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
+            <div  className="selectedState">
+                {state && <div>You selected {state}.</div>}
+                <br/>
+                {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
+            </div>
 
                 {loading === false && 
                 parks.map(park => {
                     return (
                         <Park 
+                            className="results"
                             key={park.id}
                             fullName={park.fullName}
                             location={park.states}
@@ -64,6 +68,7 @@ function App() {
                     )
                 })}
         </div>
+
     </div>
   );
 }

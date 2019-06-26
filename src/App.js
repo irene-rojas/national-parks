@@ -24,6 +24,9 @@ function App() {
     }
 
   return (
+
+    <div className="parallax">
+
     <div className="App">
 
         <div className="header">
@@ -57,7 +60,7 @@ function App() {
         </div>
 
 
-        <div className="parkResultsDiv parallax">
+        <div className="parkResultsDiv">
 
             <div  className="selectedState">
                 {state && <div>You selected {state}.</div>}
@@ -81,10 +84,13 @@ function App() {
                     })}
 
         </div>
-
-
+        {/* end parkResultsDiv */}
 
     </div>
+    {/* end App */}
+
+    </div>
+    // end parallax
   );
 }
 

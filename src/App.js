@@ -56,7 +56,8 @@ function App() {
 
         </div>
 
-        <div className="parkResultsDiv">
+
+        <div className="parkResultsDiv parallax">
 
             <div  className="selectedState">
                 {state && <div>You selected {state}.</div>}
@@ -65,21 +66,23 @@ function App() {
             </div>
 
                 {loading === false && 
-                parks.map(park => {
-                    return (
-                        <Park 
-                            className="results"
-                            key={park.id}
-                            fullName={park.fullName}
-                            location={park.states}
-                            description={park.description}
-                            url={park.url}
-                            weatherInfo={park.weatherInfo}
-                            images={park.images}
-                        />
-                    )
-                })}
+                    parks.map(park => {
+                        return (
+                            <Park 
+                                key={park.id}
+                                fullName={park.fullName}
+                                location={park.states}
+                                description={park.description}
+                                url={park.url}
+                                weatherInfo={park.weatherInfo}
+                                images={park.images}
+                            />
+                        )
+                    })}
+
         </div>
+
+
 
     </div>
   );

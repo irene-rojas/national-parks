@@ -10,4 +10,13 @@
         width: 200px;
     }
 
+    .clamp-lines__button {
+        /* border: hidden; */
+        margin: 2px;
+    }
+
+    #clamped-content-readMore {
+        margin: 2px;
+    }
+
 }

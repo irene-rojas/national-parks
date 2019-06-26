@@ -13,6 +13,11 @@
     .clamp-lines__button {
         /* border: hidden; */
         margin: 2px;
+        background: none;
+        border: 0;
+        color: red;
+        cursor: pointer;
+        padding: 0;
     }
 
     #clamped-content-readMore {

@@ -26,7 +26,10 @@ function App() {
     <div className="App">
 
         <div className="header">
-            Click a state to see its national parks and trails
+            <h1>Take A Hike!</h1>
+            <h3>Click a state to see its national parks and trails</h3>
+            <br/>
+            Powered by 
         </div>
 
         <div className="mapDiv"> 

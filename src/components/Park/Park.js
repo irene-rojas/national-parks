@@ -9,13 +9,13 @@ const Park = (props) => {
             {
                 props.images.length && <img className="parkImages" src={props.images[0].url} alt={props.images[0].title}/>
             }
-
             <br/>
-            Park Name: {props.fullName}
+            <br/>
+            {props.fullName}
             <br/>
             Location: {props.location}
             <br/>
-
+            <br/>
             <ClampLines
                 text={props.description}
                 id="readMore"
@@ -26,6 +26,7 @@ const Park = (props) => {
                 className="readMoreText"
                 innerElement="p"
             />
+            <br/>
             <a href={props.url} target="_blank" rel="noopener noreferrer">{props.url}</a>
 
         </div>

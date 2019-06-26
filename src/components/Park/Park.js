@@ -16,9 +16,7 @@ const Park = (props) => {
             <br/>
             Description: {props.description}
             <br/>
-            URL: <a href={props.url} target="_blank" rel="noopener noreferrer">{props.url}</a>
-            <br/>
-            Weather info: {props.weatherInfo}
+            <a href={props.url} target="_blank" rel="noopener noreferrer">{props.url}</a>
 
         </div>
     )

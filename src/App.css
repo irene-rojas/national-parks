@@ -4,6 +4,11 @@
         margin: 0px;
     }
 
+    #npsLogo {
+        width: 50px;
+        text-align: left;
+    }
+
     .App {
         display: grid;
         grid-template-rows: auto repeat(6, 1fr);

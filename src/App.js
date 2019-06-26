@@ -4,6 +4,7 @@ import axios from 'axios';
 import Park from "./components/Park/Park";
 import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
+import nps_logo from "./nps_logo.png";
 
 function App() {
 
@@ -29,7 +30,9 @@ function App() {
             <h1>Take A Hike!</h1>
             <h3>Click a state to see its national parks and trails</h3>
             <br/>
-            Powered by 
+            Powered by <a href="https://www.nps.gov/index.htm">
+                <img id="npsLogo" src={nps_logo} alt="logo"/>
+            </a>
         </div>
 
         <div className="mapDiv"> 

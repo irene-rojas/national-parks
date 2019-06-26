@@ -1,5 +1,9 @@
 @media (min-width: 769px) {
 
+    h1, h3 {
+        margin: 0px;
+    }
+
     .App {
         display: grid;
         grid-template-rows: auto repeat(6, 1fr);

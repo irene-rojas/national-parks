@@ -11,7 +11,7 @@ function App() {
     const [state, setState] = useState("");
     const [parks, setParks] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [stateName, setStateName] = useState(
+    const stateNames = useState(
         [
             {name: "Alaska", id: "AK"},
             {name: "Hawaii", id: "HI"},
@@ -65,6 +65,9 @@ function App() {
             {name: "Wyoming", id: "WY"}
         ]
     );
+    const [targetState, setTargetState] = useState(
+        {name: "", id: ""}
+    )
 
     const displayParks = () => {
         setLoading(true);
@@ -77,7 +80,19 @@ function App() {
         })
     }
 
-    // convert stateId to stateName
+    // convert stateId to stateNames
+    // const state = const stateNames.id
+    // when stateNames.id set, display stateNames.name instead
+
+    function displaystateNames() {
+        // let targetState = state;
+        setTargetState({
+            id: stateNames.id,
+            name: stateNames.name
+        });
+        console.log(targetState.name);
+    }
+
 
   return (
 
@@ -108,6 +123,7 @@ function App() {
                     onMouseUp={event => {
                         event.preventDefault();
                         setState(event.target.id);
+                        displaystateNames();
                         console.log(`Selected state: ${event.target.id}`);
                     }}
                 />
@@ -118,7 +134,7 @@ function App() {
             <div className="parkResultsDiv">
 
                 <div  className="selectedState">
-                    {state && <div>You selected {state}.</div>}
+                    {state && <div>You selected {targetState}.</div>}
                     <br/>
                     {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
                 </div>

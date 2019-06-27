@@ -81,16 +81,15 @@ function App() {
         })
     }
 
-    // convert stateId to stateNames
-    // const state = const stateNames.id
-    // when stateNames.id set, display stateNames.name instead
-
-    function displayStateNames(props) {
-        let targetStateId = props;
-        setTargetState({
-            id: targetStateId,
-        });
-        console.log(targetState);
+    function displayStateName(props) {
+        let stateId = stateNames.id;
+        let targetId = props;
+        if (targetId === stateId) {
+            setTargetState({
+                name: stateNames.name,
+                id: stateNames.id
+            })
+        };
     }
 
 
@@ -123,7 +122,7 @@ function App() {
                     onMouseUp={event => {
                         event.preventDefault();
                         setState(event.target.id);
-                        displayStateNames(event.target.id);
+                        displayStateName(event.target.id);
                         console.log(`Selected state: ${event.target.id}`);
                     }}
                 />
@@ -134,7 +133,7 @@ function App() {
             <div className="parkResultsDiv">
 
                 <div  className="selectedState">
-                    {state && <div>You selected {targetState}.</div>}
+                    {state && <div>You selected {targetState.name}.</div>}
                     <br/>
                     {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
                 </div>

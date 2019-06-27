@@ -6,11 +6,69 @@ import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 import nps_logo from "./nps_logo.png";
 
+const stateNames = 
+    [
+        {name: "Alaska", id: "AK"},
+        {name: "Hawaii", id: "HI"},
+        {name: "Alabama", id: "AL"},
+        {name: "Arkansas", id: "AR"},
+        {name: "Arizona", id: "AZ"},
+        {name: "California", id: "CA"},
+        {name: "Colorado", id: "CO"},
+        {name: "Connecticut", id: "CT"},
+        {name: "Delaware", id: "DE"},
+        {name: "Florida", id: "FL"},
+        {name: "Georgia", id: "GA"},
+        {name: "Iowa", id: "IA"},
+        {name: "Idaho", id: "ID"},
+        {name: "Illinois", id: "IL"},
+        {name: "Indiana", id: "IN"},
+        {name: "Kansas", id: "KS"},
+        {name: "Kentucky", id: "KY"},
+        {name: "Louisiana", id: "LA"},
+        {name: "Massachusetts", id: "MA"},
+        {name: "Maryland", id: "MD"},
+        {name: "Maine", id: "ME"},
+        {name: "Michigan", id: "MI"},
+        {name: "Minnesota", id: "MN"},
+        {name: "Missouri", id: "MO"},
+        {name: "Mississippi", id: "MS"},
+        {name: "Montana", id: "MT"},
+        {name: "North Carolina", id: "NC"},
+        {name: "North Dakota", id: "ND"},
+        {name: "Nebraska", id: "NE"},
+        {name: "New Hampshire", id: "NH"},
+        {name: "New Jersey", id: "NJ"},
+        {name: "New Mexico", id: "NM"},
+        {name: "Nevada", id: "NV"},
+        {name: "New York", id: "NY"},
+        {name: "Ohio", id: "OH"},
+        {name: "Oklahoma", id: "OK"},
+        {name: "Oregon", id: "OR"},
+        {name: "Pennsylvania", id: "PA"},
+        {name: "Rhode Island", id: "RI"},
+        {name: "South Carolina", id: "SC"},
+        {name: "South Dakota", id: "SD"},
+        {name: "Tennessee", id: "TN"},
+        {name: "Texas", id: "TX"},
+        {name: "Utah", id: "UT"},
+        {name: "Virginia", id: "VA"},
+        {name: "Vermont", id: "VT"},
+        {name: "Washington", id: "WA"},
+        {name: "Wisconsin", id: "WI"},
+        {name: "West Virginia", id: "WV"},
+        {name: "Wyoming", id: "WY"}
+    ];
+
+
 function App() {
 
     const [state, setState] = useState("");
     const [parks, setParks] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [targetState, setTargetState] = useState(
+        {name: "", id: ""}
+    )
 
     const displayParks = () => {
         setLoading(true);
@@ -22,6 +80,18 @@ function App() {
             setLoading(false);
         })
     }
+
+    function displayStateName(props) {
+        let stateId = stateNames.id;
+        let targetId = props;
+        if (targetId === stateId) {
+            setTargetState({
+                name: stateNames.name,
+                id: stateNames.id
+            })
+        };
+    }
+
 
   return (
 
@@ -52,6 +122,7 @@ function App() {
                     onMouseUp={event => {
                         event.preventDefault();
                         setState(event.target.id);
+                        displayStateName(event.target.id);
                         console.log(`Selected state: ${event.target.id}`);
                     }}
                 />
@@ -59,11 +130,10 @@ function App() {
 
             </div>
 
-
             <div className="parkResultsDiv">
 
                 <div  className="selectedState">
-                    {state && <div>You selected {state}.</div>}
+                    {state && <div>You selected {targetState.name}.</div>}
                     <br/>
                     {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
                 </div>

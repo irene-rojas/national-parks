@@ -4,6 +4,7 @@ import axios from 'axios';
 import Park from "./components/Park/Park";
 import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
+import nps_logo from "./nps_logo.png";
 
 function App() {
 
@@ -23,56 +24,73 @@ function App() {
     }
 
   return (
-    <div className="App">
 
-        <div className="header">
-            <h1>Take A Hike!</h1>
-            <h3>Click a state to see its national parks and trails</h3>
-            <br/>
-            Powered by 
-        </div>
+    <div className="parallax">
 
-        <div className="mapDiv"> 
+        <div className="App">
 
-            <SVGMap 
-                value={state}
-                onClick={displayParks}
-                onMouseUp={event => {
-                    event.preventDefault();
-                    setState(event.target.id);
-                    console.log(`Selected state: ${event.target.id}`);
-                }}
-            />
-            {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
-
-        </div>
-
-        <div className="parkResultsDiv">
-
-            <div  className="selectedState">
-                {state && <div>You selected {state}.</div>}
+            <div className="header">
+                <h1 id="takeHike">Take A Hike!</h1>
+                <h3 id="instruct">Click a state to see its national parks and trails</h3>
                 <br/>
-                {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
+                <div className="poweredBy">
+                    Powered by
+                </div>
+
+                <div className="logoDiv">
+                    <a href="https://www.nps.gov/index.htm">
+                        <img id="npsLogo" src={nps_logo} alt="logo"/>
+                    </a>
+                </div>
             </div>
 
-                {loading === false && 
-                parks.map(park => {
-                    return (
-                        <Park 
-                            className="results"
-                            key={park.id}
-                            fullName={park.fullName}
-                            location={park.states}
-                            description={park.description}
-                            url={park.url}
-                            weatherInfo={park.weatherInfo}
-                            images={park.images}
-                        />
-                    )
-                })}
+            <div className="mapDiv"> 
+
+                <SVGMap 
+                    value={state}
+                    onClick={displayParks}
+                    onMouseUp={event => {
+                        event.preventDefault();
+                        setState(event.target.id);
+                        console.log(`Selected state: ${event.target.id}`);
+                    }}
+                />
+                {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
+
+            </div>
+
+
+            <div className="parkResultsDiv">
+
+                <div  className="selectedState">
+                    {state && <div>You selected {state}.</div>}
+                    <br/>
+                    {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
+                </div>
+
+                    {loading === false && 
+                        parks.map(park => {
+                            return (
+                                <Park 
+                                    key={park.id}
+                                    fullName={park.fullName}
+                                    location={park.states}
+                                    description={park.description}
+                                    url={park.url}
+                                    weatherInfo={park.weatherInfo}
+                                    images={park.images}
+                                />
+                            )
+                        })}
+
+            </div>
+            {/* end parkResultsDiv */}
+
         </div>
+        {/* end App */}
 
     </div>
+    // end parallax
   );
 }
 

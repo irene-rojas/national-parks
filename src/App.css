@@ -8,15 +8,20 @@ a:visited {
     color: white;
 }
 
-@media (min-width: 769px) {
+.parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-    .parallax {
-        height: 100%;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+h1, h3 {
+    margin: 0px;
+}
+
+/* start landscape */
+@media (min-width: 769px) {
 
     h1, h3 {
         margin: 0px;
@@ -107,6 +112,5 @@ a:visited {
         border-radius: 50%;
     }
 
-
-
 }
+/* end landscape */

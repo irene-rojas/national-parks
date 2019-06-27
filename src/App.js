@@ -86,11 +86,10 @@ function App() {
     // when stateNames.id set, display stateNames.name instead
 
     function displayStateNames(props) {
-        let targetState = props;
-        // setTargetState({
-        //     id: targetState,
-        //     name: targetState.name
-        // });
+        let targetStateId = props;
+        setTargetState({
+            id: targetStateId,
+        });
         console.log(targetState);
     }
 

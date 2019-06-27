@@ -27,7 +27,7 @@ const Park = (props) => {
                 innerElement="p"
             />
             <br/>
-            <a href={props.url} target="_blank" rel="noopener noreferrer">{props.url}</a>
+            <a href={props.url} target="_blank" rel="noopener noreferrer">Learn more</a>
 
         </div>
     )

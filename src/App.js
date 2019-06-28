@@ -6,59 +6,6 @@ import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 import nps_logo from "./nps_logo.png";
 
-// const stateNames = 
-//     [
-//         {name: "Alaska", id: "AK"},x
-//         {name: "Hawaii", id: "HI"},x
-//         {name: "Alabama", id: "AL"},x
-//         {name: "Arkansas", id: "AR"},x
-//         {name: "Arizona", id: "AZ"},x
-//         {name: "California", id: "CA"},x
-//         {name: "Colorado", id: "CO"},x
-//         {name: "Connecticut", id: "CT"},x
-//         {name: "Delaware", id: "DE"},x
-//         {name: "Florida", id: "FL"},x
-//         {name: "Georgia", id: "GA"},x
-//         {name: "Iowa", id: "IA"},x
-//         {name: "Idaho", id: "ID"},x
-//         {name: "Illinois", id: "IL"},x
-//         {name: "Indiana", id: "IN"},x
-//         {name: "Kansas", id: "KS"},x
-//         {name: "Kentucky", id: "KY"},x
-//         {name: "Louisiana", id: "LA"},x
-//         {name: "Massachusetts", id: "MA"},x
-//         {name: "Maryland", id: "MD"},x
-//         {name: "Maine", id: "ME"},x
-//         {name: "Michigan", id: "MI"},x
-//         {name: "Minnesota", id: "MN"},x
-//         {name: "Missouri", id: "MO"},x
-//         {name: "Mississippi", id: "MS"},x
-//         {name: "Montana", id: "MT"},x
-//         {name: "North Carolina", id: "NC"},x
-//         {name: "North Dakota", id: "ND"},x
-//         {name: "Nebraska", id: "NE"},x
-//         {name: "New Hampshire", id: "NH"},x
-//         {name: "New Jersey", id: "NJ"},x
-//         {name: "New Mexico", id: "NM"},x
-//         {name: "Nevada", id: "NV"},x
-//         {name: "New York", id: "NY"},x
-//         {name: "Ohio", id: "OH"},x
-//         {name: "Oklahoma", id: "OK"},x
-//         {name: "Oregon", id: "OR"},x
-//         {name: "Pennsylvania", id: "PA"},x
-//         {name: "Rhode Island", id: "RI"},x
-//         {name: "South Carolina", id: "SC"},x
-//         {name: "South Dakota", id: "SD"},x
-//         {name: "Tennessee", id: "TN"},x
-//         {name: "Texas", id: "TX"},x
-//         {name: "Utah", id: "UT"},x
-//         {name: "Virginia", id: "VA"},x
-//         {name: "Vermont", id: "VT"},x
-//         {name: "Washington", id: "WA"},x
-//         {name: "Wisconsin", id: "WI"},x
-//         {name: "West Virginia", id: "WV"},x
-//         {name: "Wyoming", id: "WY"}x
-//     ];
 
 const stateMap = {
     "AK": "Alaska",

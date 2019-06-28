@@ -93,7 +93,7 @@ function App() {
                 </div>
 
                 <div className="logoDiv">
-                    <a href="https://www.nps.gov/index.htm">
+                    <a href="https://www.nps.gov/index.htm" target="_blank" rel="noopener noreferrer">
                         <img id="npsLogo" src={nps_logo} alt="logo"/>
                     </a>
                 </div>

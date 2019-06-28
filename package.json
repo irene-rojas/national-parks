@@ -2,14 +2,18 @@
   "name": "national-parks",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://irene-rojas.github.io/national-parks",
   "dependencies": {
     "axios": "^0.19.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-clamp-lines": "^3.0.2",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

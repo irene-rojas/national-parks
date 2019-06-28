@@ -6,59 +6,111 @@ import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 import nps_logo from "./nps_logo.png";
 
-const stateNames = 
-    [
-        {name: "Alaska", id: "AK"},
-        {name: "Hawaii", id: "HI"},
-        {name: "Alabama", id: "AL"},
-        {name: "Arkansas", id: "AR"},
-        {name: "Arizona", id: "AZ"},
-        {name: "California", id: "CA"},
-        {name: "Colorado", id: "CO"},
-        {name: "Connecticut", id: "CT"},
-        {name: "Delaware", id: "DE"},
-        {name: "Florida", id: "FL"},
-        {name: "Georgia", id: "GA"},
-        {name: "Iowa", id: "IA"},
-        {name: "Idaho", id: "ID"},
-        {name: "Illinois", id: "IL"},
-        {name: "Indiana", id: "IN"},
-        {name: "Kansas", id: "KS"},
-        {name: "Kentucky", id: "KY"},
-        {name: "Louisiana", id: "LA"},
-        {name: "Massachusetts", id: "MA"},
-        {name: "Maryland", id: "MD"},
-        {name: "Maine", id: "ME"},
-        {name: "Michigan", id: "MI"},
-        {name: "Minnesota", id: "MN"},
-        {name: "Missouri", id: "MO"},
-        {name: "Mississippi", id: "MS"},
-        {name: "Montana", id: "MT"},
-        {name: "North Carolina", id: "NC"},
-        {name: "North Dakota", id: "ND"},
-        {name: "Nebraska", id: "NE"},
-        {name: "New Hampshire", id: "NH"},
-        {name: "New Jersey", id: "NJ"},
-        {name: "New Mexico", id: "NM"},
-        {name: "Nevada", id: "NV"},
-        {name: "New York", id: "NY"},
-        {name: "Ohio", id: "OH"},
-        {name: "Oklahoma", id: "OK"},
-        {name: "Oregon", id: "OR"},
-        {name: "Pennsylvania", id: "PA"},
-        {name: "Rhode Island", id: "RI"},
-        {name: "South Carolina", id: "SC"},
-        {name: "South Dakota", id: "SD"},
-        {name: "Tennessee", id: "TN"},
-        {name: "Texas", id: "TX"},
-        {name: "Utah", id: "UT"},
-        {name: "Virginia", id: "VA"},
-        {name: "Vermont", id: "VT"},
-        {name: "Washington", id: "WA"},
-        {name: "Wisconsin", id: "WI"},
-        {name: "West Virginia", id: "WV"},
-        {name: "Wyoming", id: "WY"}
-    ];
+// const stateNames = 
+//     [
+//         {name: "Alaska", id: "AK"},x
+//         {name: "Hawaii", id: "HI"},x
+//         {name: "Alabama", id: "AL"},x
+//         {name: "Arkansas", id: "AR"},x
+//         {name: "Arizona", id: "AZ"},x
+//         {name: "California", id: "CA"},x
+//         {name: "Colorado", id: "CO"},x
+//         {name: "Connecticut", id: "CT"},x
+//         {name: "Delaware", id: "DE"},x
+//         {name: "Florida", id: "FL"},x
+//         {name: "Georgia", id: "GA"},x
+//         {name: "Iowa", id: "IA"},x
+//         {name: "Idaho", id: "ID"},x
+//         {name: "Illinois", id: "IL"},x
+//         {name: "Indiana", id: "IN"},x
+//         {name: "Kansas", id: "KS"},x
+//         {name: "Kentucky", id: "KY"},x
+//         {name: "Louisiana", id: "LA"},x
+//         {name: "Massachusetts", id: "MA"},x
+//         {name: "Maryland", id: "MD"},x
+//         {name: "Maine", id: "ME"},x
+//         {name: "Michigan", id: "MI"},x
+//         {name: "Minnesota", id: "MN"},x
+//         {name: "Missouri", id: "MO"},x
+//         {name: "Mississippi", id: "MS"},x
+//         {name: "Montana", id: "MT"},x
+//         {name: "North Carolina", id: "NC"},x
+//         {name: "North Dakota", id: "ND"},x
+//         {name: "Nebraska", id: "NE"},x
+//         {name: "New Hampshire", id: "NH"},x
+//         {name: "New Jersey", id: "NJ"},x
+//         {name: "New Mexico", id: "NM"},x
+//         {name: "Nevada", id: "NV"},x
+//         {name: "New York", id: "NY"},x
+//         {name: "Ohio", id: "OH"},x
+//         {name: "Oklahoma", id: "OK"},x
+//         {name: "Oregon", id: "OR"},x
+//         {name: "Pennsylvania", id: "PA"},x
+//         {name: "Rhode Island", id: "RI"},x
+//         {name: "South Carolina", id: "SC"},x
+//         {name: "South Dakota", id: "SD"},x
+//         {name: "Tennessee", id: "TN"},x
+//         {name: "Texas", id: "TX"},x
+//         {name: "Utah", id: "UT"},x
+//         {name: "Virginia", id: "VA"},x
+//         {name: "Vermont", id: "VT"},x
+//         {name: "Washington", id: "WA"},x
+//         {name: "Wisconsin", id: "WI"},x
+//         {name: "West Virginia", id: "WV"},x
+//         {name: "Wyoming", id: "WY"}x
+//     ];
+
+const stateMap = {
+    "AK": "Alaska",
+    "HI": "Hawaii",
+    "AR": "Arkansas",
+    "AZ": "Arizona",
+    "CA": "California",
+    "CO": "Colorado",
+    "CT": "Connecticut",
+    "DE": "Delaware",
+    "FL": "Florida",
+    "GA": "Georgia",
+    "IA": "Iowa",
+    "ID": "Idaho",
+    "IL": "Illinois",
+    "IN": "Indiana",
+    "KS": "Kansas",
+    "KY": "Kentucky",
+    "LA": "Louisiana",
+    "MA": "Massachusetts",
+    "MD": "Maryland",
+    "ME": "Maine",
+    "MI": "Michigan",
+    "MN": "Minnesota",
+    "MO": "Missouri",
+    "MS": "Mississippi",
+    "MT": "Montana",
+    "NC": "North Carolina",
+    "ND": "North Dakota",
+    "NE": "Nebraska",
+    "NH": "New Hampshire",
+    "NJ": "New Jersey",
+    "NM": "New Mexico",
+    "NV": "Nevada",
+    "NY": "New York",
+    "OH": "Ohio",
+    "OK": "Oklahoma",
+    "OR": "Oregon",
+    "PA": "Pennsylvania",
+    "RI": "Rhode Island",
+    "SC": "South Carolina",
+    "SD": "South Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "UT": "Utah",
+    "VA": "Virginia",
+    "VT": "Vermont",
+    "WA": "Washington",
+    "WI": "Wisconsin",
+    "WV": "West Virginia",
+    "WY": "Wyoming"
+}   
 
 
 function App() {
@@ -66,9 +118,6 @@ function App() {
     const [state, setState] = useState("");
     const [parks, setParks] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [targetState, setTargetState] = useState(
-        {name: "", id: ""}
-    )
 
     const displayParks = () => {
         setLoading(true);
@@ -79,17 +128,6 @@ function App() {
         }).then(() => {
             setLoading(false);
         })
-    }
-
-    function displayStateName(props) {
-        let stateId = stateNames.id;
-        let targetId = props;
-        if (targetId === stateId) {
-            setTargetState({
-                name: stateNames.name,
-                id: stateNames.id
-            })
-        };
     }
 
 
@@ -122,7 +160,6 @@ function App() {
                     onMouseUp={event => {
                         event.preventDefault();
                         setState(event.target.id);
-                        displayStateName(event.target.id);
                         console.log(`Selected state: ${event.target.id}`);
                     }}
                 />

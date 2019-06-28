@@ -110,7 +110,7 @@ const stateMap = {
     "WI": "Wisconsin",
     "WV": "West Virginia",
     "WY": "Wyoming"
-}   
+};
 
 
 function App() {
@@ -170,7 +170,7 @@ function App() {
             <div className="parkResultsDiv">
 
                 <div  className="selectedState">
-                    {state && <div>You selected {targetState.name}.</div>}
+                    {state && <div>You selected {stateMap[state]}.</div>}
                     <br/>
                     {loading === true && <img className="spinner" src={spinning} alt="loading"/>}
                 </div>

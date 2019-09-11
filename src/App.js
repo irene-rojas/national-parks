@@ -82,9 +82,9 @@ function App() {
 
     <div className="parallax">
 
-        <div className="App">
+        <main className="App">
 
-            <div className="header">
+            <header className="header">
                 <h1 id="takeHike">Take A Hike!</h1>
                 <h3 id="instruct">Click a state to see its national parks and trails</h3>
                 <br/>
@@ -97,9 +97,9 @@ function App() {
                         <img id="npsLogo" src={nps_logo} alt="logo"/>
                     </a>
                 </div>
-            </div>
+            </header>
 
-            <div className="mapDiv"> 
+            <figure className="mapDiv"> 
 
                 <SVGMap 
                     value={state}
@@ -112,9 +112,9 @@ function App() {
                 />
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
-            </div>
+            </figure>
 
-            <div className="parkResultsDiv">
+            <section className="parkResultsDiv">
 
                 <div  className="selectedState">
                     {state && <div>You selected {stateMap[state]}.</div>}
@@ -137,10 +137,10 @@ function App() {
                             )
                         })}
 
-            </div>
+            </section>
             {/* end parkResultsDiv */}
 
-        </div>
+        </main>
         {/* end App */}
 
     </div>

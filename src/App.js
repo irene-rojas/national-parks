@@ -8,16 +8,18 @@ import nps_logo from "./nps_logo.png";
 
 
 const stateMap = {
+    "AL": "Alabama",
     "AK": "Alaska",
-    "HI": "Hawaii",
     "AR": "Arkansas",
     "AZ": "Arizona",
     "CA": "California",
     "CO": "Colorado",
     "CT": "Connecticut",
+    "DC": "District of Columbia",
     "DE": "Delaware",
     "FL": "Florida",
     "GA": "Georgia",
+    "HI": "Hawaii",
     "IA": "Iowa",
     "ID": "Idaho",
     "IL": "Illinois",
@@ -112,9 +114,14 @@ function App() {
                 />
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
+            {/* <div>
+                <List />
+            </div> */}
+
             </figure>
 
-            <section className="parkResultsDiv">
+
+            <div className="parkResultsDiv">
 
                 <div  className="selectedState">
                     {state && <div>You selected {stateMap[state]}.</div>}
@@ -137,7 +144,7 @@ function App() {
                             )
                         })}
 
-            </section>
+            </div>
             {/* end parkResultsDiv */}
 
         </main>

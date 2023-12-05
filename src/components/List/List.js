@@ -5,12 +5,12 @@ const List = (props) => {
         <div className='stateList'>
             <form>
             <select id="states_list">
-                <option value="Alabama">Alabama</option>
+                <option value="AL">Alabama</option>
                 <option value="Alaska">Alaska</option>
                 <option value="Arizona">Arizona</option>
                 <option value="Arkansas">Arkansas</option>
                 <option value="California">California</option>
-                <option value="Colorado">Colorado</option>
+                <option value="CO">Colorado</option>
                 <option value="Connecticut">Connecticut</option>
                 <option value="Delaware">Delaware</option>
                 <option value="DC">District of Columbia</option>
@@ -58,7 +58,7 @@ const List = (props) => {
                 <option value="Wyoming">Wyoming</option>
             </select>
 
-            <input type="submit" />
+            <input type="submit"/>
             </form>
         </div>
     )

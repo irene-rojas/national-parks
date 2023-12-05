@@ -5,45 +5,45 @@ import Park from "./components/Park/Park";
 import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 import nps_logo from "./nps_logo.png";
-import List from "./components/List/List";
+// import List from "./components/List/List";
 
 
 const stateMap = {
     "AL": "Alabama",
     "AK": "Alaska",
-    "AR": "Arkansas",
     "AZ": "Arizona",
+    "AR": "Arkansas",
     "CA": "California",
     "CO": "Colorado",
     "CT": "Connecticut",
-    "DC": "District of Columbia",
     "DE": "Delaware",
+    "DC": "District of Columbia",
     "FL": "Florida",
     "GA": "Georgia",
     "HI": "Hawaii",
-    "IA": "Iowa",
     "ID": "Idaho",
     "IL": "Illinois",
     "IN": "Indiana",
+    "IA": "Iowa",
     "KS": "Kansas",
     "KY": "Kentucky",
     "LA": "Louisiana",
-    "MA": "Massachusetts",
-    "MD": "Maryland",
     "ME": "Maine",
+    "MD": "Maryland",
+    "MA": "Massachusetts",
     "MI": "Michigan",
     "MN": "Minnesota",
-    "MO": "Missouri",
     "MS": "Mississippi",
+    "MO": "Missouri",
     "MT": "Montana",
-    "NC": "North Carolina",
-    "ND": "North Dakota",
     "NE": "Nebraska",
+    "NV": "Nevada",
     "NH": "New Hampshire",
     "NJ": "New Jersey",
     "NM": "New Mexico",
-    "NV": "Nevada",
     "NY": "New York",
+    "NC": "North Carolina",
+    "ND": "North Dakota",
     "OH": "Ohio",
     "OK": "Oklahoma",
     "OR": "Oregon",
@@ -54,11 +54,11 @@ const stateMap = {
     "TN": "Tennessee",
     "TX": "Texas",
     "UT": "Utah",
-    "VA": "Virginia",
     "VT": "Vermont",
+    "VA": "Virginia",
     "WA": "Washington",
-    "WI": "Wisconsin",
     "WV": "West Virginia",
+    "WI": "Wisconsin",
     "WY": "Wyoming"
 };
 
@@ -70,6 +70,7 @@ function App() {
     const [loading, setLoading] = useState(false);
 
     const displayParks = () => {
+        setState(state);
         setLoading(true);
         axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}&fields=images`)
         .then(res => {
@@ -80,6 +81,17 @@ function App() {
         })
     }
 
+    // function handleSubmit(e) {
+    //     e.preventDefault;
+    //     setLoading(true);
+    //     axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}&fields=images`)
+    //     .then(res => {
+    //         setParks(res.data.data);
+    //         console.log(res.data.data);
+    //     }).then(() => {
+    //         setLoading(false);
+    //     })
+    // }
 
   return (
 
@@ -115,12 +127,74 @@ function App() {
                 />
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
-                <div>
-                    <List />
+                {/* <div>
+                    <List 
+                        value={state}
+                        onSubmit={displayParks}
+                    />
+                </div> */}
+                <div className='stateList'>
+                    <form>
+                        <label>State Dropdown List</label>
+                        <select id="states_list" value={state}>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+
+                        <input type="submit" />
+                    </form>
                 </div>
+
             </figure>
-
-
 
             <div className="parkResultsDiv">
 

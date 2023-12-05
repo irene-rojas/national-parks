@@ -115,21 +115,6 @@ function App() {
                 />
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
-
-                {/* <div>
-                    <div className='stateList'>
-                        <table role="presentation">
-                            <tbody>
-                                <tr>
-                                    <td><a>Alabama</a></td>
-                                    <td>Alaska</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div> */}
-
                 <div>
                     <List />
                 </div>

@@ -5,6 +5,7 @@ import Park from "./components/Park/Park";
 import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 import nps_logo from "./nps_logo.png";
+import List from "./components/List/List";
 
 
 const stateMap = {
@@ -114,11 +115,26 @@ function App() {
                 />
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
-            {/* <div>
-                <List />
-            </div> */}
 
+                {/* <div>
+                    <div className='stateList'>
+                        <table role="presentation">
+                            <tbody>
+                                <tr>
+                                    <td><a>Alabama</a></td>
+                                    <td>Alaska</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div> */}
+
+                <div>
+                    <List />
+                </div>
             </figure>
+
 
 
             <div className="parkResultsDiv">

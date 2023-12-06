@@ -94,7 +94,7 @@ function App() {
 
             <header className="header">
                 <h1 id="takeHike">Take A Hike!</h1>
-                <h3 id="instruct">Click a state to see its national parks and trails</h3>
+                <h5 id="instruct">Use the map or list to see a state's national parks and trails</h5>
                 <br/>
                 <div className="poweredBy">
                     Powered by

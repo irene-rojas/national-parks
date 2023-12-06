@@ -4,10 +4,10 @@ import ClampLines from 'react-clamp-lines';
 
 const Park = (props) => {
     return (
-        <section className="parkResult">
+        <section className="parkResult card">
 
             {
-                props.images.length && <img className="parkImages" src={props.images[0].url} alt={props.images[0].title}/>
+                props.images.length && <img className="parkImages card-img-top" src={props.images[0].url} alt={props.images[0].title}/>
             }
             <br/>
             <br/>

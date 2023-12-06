@@ -38,13 +38,11 @@
     }
 
     .clamp-lines__button {
-        /* border: hidden; */
-        margin: 2px;
-        background: none;
-        border: 0;
-        color: red;
+        margin: 5px;
+        border: 1;
+        border-radius: 5px;
         cursor: pointer;
-        padding: 0;
+        padding: 5px;
         font-size: 10pt;
     }
 

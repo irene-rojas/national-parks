@@ -20,6 +20,10 @@ h1, h3 {
     margin: 0px;
 }
 
+.stateSubmit {
+    margin: 15px;
+}
+
 /* start landscape */
 @media (min-width: 769px) {
 

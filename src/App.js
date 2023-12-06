@@ -81,13 +81,10 @@ function App() {
         })
     }
 
-    // onChange = setState(value)
     const listState = (e) => {
         setState(e.target.value);
         console.log(e.target.value);
     }
-
-    // onSubmit = displayParks(state)? 
 
   return (
 
@@ -124,12 +121,12 @@ function App() {
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
                 <div className='stateList'>
-                    <form
-                        onChange={listState}
-                        // onSubmit={displayParks()}
-                    >
+                    <form onSubmit={(e) => {
+                        e.preventDefault(); // Prevent the default form submission behavior
+                        displayParks();
+                    }}>
                         <label>State Dropdown List</label>
-                        <select id="states_list">
+                        <select id="states_list" value={state} onChange={listState}>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>

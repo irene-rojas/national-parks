@@ -126,7 +126,7 @@ function App() {
                         displayParks();
                     }}>
                         <label>State Dropdown List</label>
-                        <select id="states_list" value={state} onChange={listState}>
+                        <select id="states_list" value={state} onChange={listState} title="State Dropdown List">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>

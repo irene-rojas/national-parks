@@ -81,17 +81,13 @@ function App() {
         })
     }
 
-    // function handleSubmit(e) {
-    //     e.preventDefault;
-    //     setLoading(true);
-    //     axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}&fields=images`)
-    //     .then(res => {
-    //         setParks(res.data.data);
-    //         console.log(res.data.data);
-    //     }).then(() => {
-    //         setLoading(false);
-    //     })
-    // }
+    // onChange = setState(value)
+    const listState = (e) => {
+        setState(e.target.value);
+        console.log(e.target.value);
+    }
+
+    // onSubmit = displayParks(state)? 
 
   return (
 
@@ -127,16 +123,13 @@ function App() {
                 />
                 {/* Click order: onMouseDown, onMouseUp, onClick. Hence, displayParks @ onClick runs after onMouseUp and only once */}
 
-                {/* <div>
-                    <List 
-                        value={state}
-                        onSubmit={displayParks}
-                    />
-                </div> */}
                 <div className='stateList'>
-                    <form>
+                    <form
+                        onChange={listState}
+                        // onSubmit={displayParks()}
+                    >
                         <label>State Dropdown List</label>
-                        <select id="states_list" value={state}>
+                        <select id="states_list">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>

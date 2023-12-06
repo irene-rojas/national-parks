@@ -7,7 +7,7 @@ const Park = (props) => {
         <section className="parkResult card">
 
             {
-                props.images.length && <img className="parkImages card-img-top" src={props.images[0].url} alt={props.images[0].title}/>
+                props.images.length && <img className="parkImages mx-auto d-block" src={props.images[0].url} alt={props.images[0].title}/>
             }
             <br/>
             <br/>

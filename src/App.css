@@ -34,7 +34,7 @@ h1, h3 {
 
     .App {
         display: grid;
-        grid-template-rows: auto repeat(6, 1fr);
+        grid-template-rows: auto repeat(7, 1fr);
         grid-template-columns: 50px 1fr 50px;
         text-align: center;
         height: 100vh;
@@ -85,11 +85,21 @@ h1, h3 {
         grid-column: 2/3;
         width: 600px;
         margin: auto;
+        justify-content: center;
+    }
+
+    .stateList {
+        /* in App */
+        grid-row: 3/4;
+        grid-column: 2/3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .parkResultsDiv {
         /* in App */
-        grid-row: 3/4;
+        grid-row: 4/5;
         grid-column: 2/3;
         /* in parkResultsDiv */
         display: grid;

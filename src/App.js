@@ -102,7 +102,7 @@ function App() {
 
                 <div className="logoDiv">
                     <a href="https://www.nps.gov/index.htm" target="_blank" rel="noopener noreferrer">
-                        <img id="npsLogo" src={nps_logo} alt="logo"/>
+                        <img id="npsLogo" src={nps_logo} alt="NPS Logo"/>
                     </a>
                 </div>
             </header>
@@ -125,8 +125,8 @@ function App() {
                         e.preventDefault(); // Prevent the default form submission behavior
                         displayParks();
                     }}>
-                        <label>State Dropdown List</label>
-                        <select id="states_list" value={state} onChange={listState} title="State Dropdown List">
+                        <select className="form-select form-select-sm" id="states_list" value={state} onChange={listState} title="State Dropdown List">
+                            <option>Select a state from the list</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -180,7 +180,7 @@ function App() {
                             <option value="WY">Wyoming</option>
                         </select>
 
-                        <input type="submit" />
+                        <input type="submit" className="btn btn-light"/>
                     </form>
                 </div>
 

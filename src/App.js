@@ -5,7 +5,6 @@ import Park from "./components/Park/Park";
 import SVGMap from "./components/Map/Map.js";
 import spinning from "./spinning.gif";
 import nps_logo from "./nps_logo.png";
-// import List from "./components/List/List";
 
 
 const stateMap = {
@@ -75,7 +74,7 @@ function App() {
         axios.get(`https://developer.nps.gov/api/v1/parks?api_key=${process.env.REACT_APP_NPS_API}&stateCode=${state}&fields=images`)
         .then(res => {
             setParks(res.data.data);
-            console.log(res.data.data);
+            // console.log(res.data.data);
         }).then(() => {
             setLoading(false);
         })
@@ -83,7 +82,7 @@ function App() {
 
     const listState = (e) => {
         setState(e.target.value);
-        console.log(e.target.value);
+        // console.log(e.target.value);
     }
 
   return (
@@ -114,7 +113,7 @@ function App() {
                     onMouseUp={event => {
                         event.preventDefault();
                         setState(event.target.id);
-                        console.log(`Selected state: ${event.target.id}`);
+                        // console.log(`Selected state: ${event.target.id}`);
                     }}
                 />
             </figure>
